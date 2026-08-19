@@ -1,33 +1,147 @@
-# Term Deposit Subscription Prediction (ML)
-> **Predicting Banking Customer Behavior using Decision Tree Classifier and Feature Engineering**
+# Term Deposit Subscription Prediction
 
-โปรเจกต์พัฒนาแบบจำลองการเรียนรู้ของเครื่อง (Machine Learning) เพื่อพยากรณ์โอกาสที่ลูกค้าธนาคารจะตัดสินใจสมัครบริการเงินฝากประจำ (Term Deposit) โดยวิเคราะห์จากฐานข้อมูลการตลาดของธนาคาร เพื่อเพิ่มประสิทธิภาพในการคัดกรองกลุ่มเป้าหมาย
+**Machine Learning Project | Python · Decision Tree · Random Forest · Scikit-learn**
 
-## 📌 บทสรุปโครงการ (Project Overview)
-* **วัตถุประสงค์ (Objective):** เพื่อสร้างแบบจำลองจำแนกประเภท (Classification Model) ที่สามารถระบุปัจจัยสำคัญและทำนายพฤติกรรมการตัดสินใจสมัครบริการของลูกค้าได้อย่างแม่นยำ
-* **ปัญหา (Problem):** การติดต่อลูกค้าแบบเหมาสวม (Mass Marketing) สิ้นเปลืองทรัพยากรและเวลา การทราบล่วงหน้าว่าลูกค้าคนใดมีแนวโน้มจะสมัคร จะช่วยให้ทีมขายโฟกัสได้ถูกจุดและเพิ่ม Conversion Rate
-* **ข้อมูล (Data):** ชุดข้อมูล Bank Marketing (Campaign Data) ที่ประกอบด้วยข้อมูลประชากร พฤติกรรมการติดต่อในอดีต และปัจจัยด้านเศรษฐกิจ
+## Project Overview
 
-## 🛠️ เทคนิคและเครื่องมือ (Tech Stack)
-* **Language:** Python 3
-* **Libraries:** `Pandas`, `NumPy`, `Scikit-learn`, `Matplotlib`, `Seaborn`
-* **Machine Learning Model:** **Decision Tree Classifier**
-* **Techniques:**
-    * **Data Cleaning & Preprocessing:** จัดการค่าที่ขาดหายและแปลงตัวแปรหมวดหมู่ (Label Encoding)
-    * **Feature Engineering:** คัดเลือกและเตรียมตัวแปรที่มีอิทธิพลต่อผลลัพธ์
-    * **Model Visualization:** การแสดงผลลำดับการตัดสินใจของต้นไม้ (Tree Plot)
+โปรเจกต์นี้เป็นการพัฒนา Machine Learning Classification Model เพื่อทำนายว่าลูกค้าธนาคารมีแนวโน้มสมัครบริการเงินฝากประจำ (Term Deposit) หรือไม่ โดยใช้ข้อมูลจาก Bank Marketing Dataset
 
-## 📊 ขั้นตอนการดำเนินงาน (Methodology)
-1. **Exploratory Data Analysis (EDA):** สำรวจความสัมพันธ์ระหว่างปัจจัยต่างๆ เช่น อายุ อาชีพ และระยะเวลาการสนทนา กับผลการสมัครบริการ
-2. **Data Split:** แบ่งข้อมูลเป็นชุด Training และ Testing เพื่อประเมินประสิทธิภาพความแม่นยำของแบบจำลอง
-3. **Model Training:** ฝึกสอนแบบจำลอง Decision Tree เพื่อสร้างกฎในการจำแนกลูกค้า (Decision Rules)
-4. **Feature Importance Analysis:** วิเคราะห์หาตัวแปรที่มีอิทธิพลสูงสุดต่อแบบจำลอง
+กระบวนการวิเคราะห์ครอบคลุมการเตรียมข้อมูล การสำรวจข้อมูล การแปลงตัวแปรหมวดหมู่ การแบ่ง Training/Test Set การสร้างโมเดล และการเปรียบเทียบประสิทธิภาพระหว่าง Decision Tree และ Random Forest
 
-## 🚀 ผลการศึกษาและ Insights (Results & Insights)
-* **Key Discovery:** พบว่า **"ระยะเวลาที่ใช้ในการสนทนา" (Duration)** เป็นปัจจัยที่มีผลต่อการตัดสินใจสมัครมากที่สุด (Importance Score สูงถึง 0.53)
-* **Business Insight:** ลูกค้าที่ใช้เวลาฟังข้อมูลและซักถามเป็นเวลานาน มีแนวโน้มที่จะตอบรับบริการสูงกว่าปกติ ซึ่งสะท้อนถึงคุณภาพของการโน้มน้าวใจในกระบวนการขาย
-* **Performance:** แบบจำลองสามารถจำแนกกลุ่มลูกค้าที่มีแนวโน้มสมัครออกจากกลุ่มที่ไม่สมัครได้อย่างเป็นระบบ ช่วยลดภาระงานของฝ่ายการตลาดในการติดต่อลูกค้าที่ไม่ใช่กลุ่มเป้าหมาย
+## Objective
 
----
-**Developed by:** Ampika Pratumtong  
-**Contact:** Ampika.pratumtong47@gmail.com
+- สร้างโมเดล Classification สำหรับทำนายการสมัคร Term Deposit
+- เปรียบเทียบประสิทธิภาพของ Decision Tree และ Random Forest
+- ประเมินโมเดลภายใต้ปัญหา Class Imbalance
+- วิเคราะห์ Feature Importance เพื่อระบุปัจจัยสำคัญที่มีผลต่อการทำนาย
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Jupyter Notebook / Google Colab
+- Machine Learning
+- Data Analysis
+
+## Data Preparation
+
+ขั้นตอนการเตรียมข้อมูลประกอบด้วย
+
+- Data Cleaning
+- Data Preprocessing
+- Categorical Encoding
+- Exploratory Data Analysis (EDA)
+- Feature Preparation
+- Train/Test Split
+- Feature Scaling
+
+ข้อมูลถูกแบ่งเป็น Training และ Testing Set โดยใช้ `test_size = 0.30`
+และใช้ Stratified Sampling เพื่อรักษาสัดส่วนของ Target Class
+
+## Models
+
+### Decision Tree
+
+ใช้ Decision Tree Classifier โดยกำหนด
+
+- Criterion: Gini
+- Max Depth: 8
+- Class Weight: Balanced
+- Random State: 0
+
+### Random Forest
+
+สร้าง Random Forest Classifier เพื่อเปรียบเทียบประสิทธิภาพกับ Decision Tree
+
+## Model Evaluation
+
+ใช้ Metric หลักในการประเมินโมเดล ได้แก่
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+
+### Model Comparison
+
+| Model | Accuracy | Precision | Recall | F1-Score |
+|---|---:|---:|---:|---:|
+| Decision Tree | 78.48% | 31.62% | 75.00% | 44.49% |
+| Random Forest | 88.80% | 53.70% | 18.59% | 27.62% |
+
+แม้ Random Forest จะมี Accuracy โดยรวมสูงกว่า แต่มี Recall สำหรับกลุ่มลูกค้าที่สมัครต่ำมาก
+
+Decision Tree สามารถระบุกลุ่มลูกค้าที่สมัครได้ดีกว่า โดยมี Recall 75% จึงถูกเลือกเป็น Final Model สำหรับโปรเจกต์นี้
+
+## Final Model
+
+**Decision Tree Classifier**
+
+Final Model Performance:
+
+- Accuracy: 78.48%
+- Precision: 31.62%
+- Recall: 75.00%
+- F1-Score: 44.49%
+
+Confusion Matrix:
+
+```text
+[[948 253]
+ [ 39 117]]
+```
+
+โมเดลสามารถระบุลูกค้าที่สมัครจริงได้ 117 ราย จากกลุ่มผู้สมัครจริง 156 ราย
+
+## Feature Importance
+
+จากการวิเคราะห์ Feature Importance พบว่า `duration` เป็นตัวแปรที่มีความสำคัญสูงที่สุด โดยมี Importance ประมาณ **0.53**
+
+ตัวแปรสำคัญลำดับต้น ๆ ได้แก่
+
+- `duration`
+- `poutcome_success`
+- `contact_unknown`
+- `age`
+- `balance`
+- `day`
+- `pdays`
+
+## Key Insight
+
+`duration` หรือระยะเวลาในการสนทนากับลูกค้าเป็นตัวแปรที่มีอิทธิพลต่อโมเดลสูงที่สุด
+
+อย่างไรก็ตาม ตัวแปรนี้มีข้อจำกัดในเชิงการใช้งานจริง เพราะระยะเวลาการสนทนาจะทราบหลังจากการติดต่อเกิดขึ้นแล้ว จึงอาจไม่เหมาะสำหรับใช้ทำนายลูกค้าก่อนเริ่มการติดต่อ
+
+## My Responsibilities
+
+- ทำความสะอาดและเตรียมข้อมูลสำหรับ Machine Learning
+- แปลงตัวแปรหมวดหมู่ให้อยู่ในรูปแบบที่โมเดลสามารถใช้งานได้
+- ทำ Exploratory Data Analysis
+- แบ่งข้อมูลเป็น Training และ Testing Set
+- พัฒนา Decision Tree และ Random Forest Models
+- ประเมินโมเดลด้วย Accuracy, Precision, Recall และ F1-Score
+- วิเคราะห์ผลภายใต้ Class Imbalance
+- เปรียบเทียบโมเดลและเลือก Final Model
+- วิเคราะห์ Feature Importance และตีความผลลัพธ์
+
+## Project Files
+
+```text
+term-deposit-subscription-prediction/
+│
+├── README.md
+└── term-deposit-subscription-prediction.ipynb
+```
+
+## Project Type
+
+**Academic Project — Machine Learning Classification**
+
+โปรเจกต์นี้พัฒนาขึ้นเพื่อประยุกต์ใช้ Machine Learning ในการแก้ปัญหา Classification พร้อมฝึกการประเมินโมเดลภายใต้ Class Imbalance และการตีความ Feature Importance
+
+> **Note:** โปรเจกต์นี้จัดทำขึ้นเพื่อการศึกษาและการนำเสนอผลงานใน Portfolio
